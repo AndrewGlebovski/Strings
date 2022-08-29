@@ -66,18 +66,16 @@ int strcmp(const char str1[], const char str2[]) {
 
 
 int strchr(const char str[], char chr) {
-    for(int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == chr)
-            return i;
-    }
+    for(int i = 0; str[i] != '\0'; i++)
+        if (str[i] == chr) return i;
 
     return -1;
 }
 
 
 void strcpy(char copy[], const char origin[]) {
-    int i = 0;
-    for(; origin[i] != '\0'; i++)
+    int i = 0, size = strlen(copy);
+    for(; origin[i] != '\0' && i < size; i++)
         copy[i] = origin[i];
     
     copy[i] = '\0';
